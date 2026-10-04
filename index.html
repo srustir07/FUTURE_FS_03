@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Ganesh Auto Works | Bike & Car Service, Book Online, Track Repair</title>
+<meta name="description" content="Bike and car servicing with upfront prices. Get an instant estimate, book a slot, track your repair and find your next service date.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="offer">Free foam wash with every full service this month</div>
+
+<header class="top">
+  <div class="wrap bar">
+    <span class="logo">Sri Ganesh Auto Works</span>
+    <div class="right">
+      <span id="openBadge" class="badge"></span>
+      <button id="themeBtn" class="icon" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+  <nav class="menu wrap" aria-label="Main">
+    <a href="#estimator">Estimate</a>
+    <a href="#services">Services</a>
+    <a href="#rates">Rates</a>
+    <a href="#book">Book</a>
+    <a href="#track">Track</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Know the price before you hand over the keys.</h1>
+      <p class="lead">Bike and car servicing with fixed rates, online slot booking and live repair tracking, so you always know where your vehicle stands.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a slot</a>
+        <a class="btn ghost" href="#track">Track my repair</a>
+      </div>
+      <ul class="chips">
+        <li>Pickup &amp; drop</li>
+        <li>Genuine parts</li>
+        <li>Same-day delivery</li>
+      </ul>
+    </div>
+
+    <div class="card" id="estimator">
+      <h2>Instant service estimate</h2>
+      <label for="veh">Vehicle</label>
+      <select id="veh"></select>
+      <label for="svc">Service needed</label>
+      <select id="svc"></select>
+      <div class="chk"><input type="checkbox" id="pick"><label for="pick">Pickup &amp; drop (+₹150)</label></div>
+      <div class="chk"><input type="checkbox" id="wash"><label for="wash">Foam wash (+₹100)</label></div>
+      <div class="total"><span>Estimated total</span><strong id="total">₹0</strong></div>
+      <p class="note">Labour only. Parts like brake pads or filters are charged extra at actual cost, and we confirm with you first.</p>
+      <a class="btn" href="#book" id="useEst">Book this service</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we fix</h2>
+    <div class="services">
+      <div class="svc"><span class="ic">🛠️</span><h3>Basic service</h3><p>Oil, filter check, chain/belt, brake and light check.</p></div>
+      <div class="svc"><span class="ic">🧰</span><h3>Full service</h3><p>Basic service plus tuning, deep cleaning and a road test.</p></div>
+      <div class="svc"><span class="ic">🛢️</span><h3>Oil change</h3><p>Engine oil and filter, ready in about 30 minutes.</p></div>
+      <div class="svc"><span class="ic">🛑</span><h3>Brake service</h3><p>Pad or shoe replacement, fluid check, disc inspection.</p></div>
+      <div class="svc"><span class="ic">🛞</span><h3>Wheel alignment (cars)</h3><p>Computerised alignment and balancing.</p></div>
+      <div class="svc"><span class="ic">❄️</span><h3>AC service (cars)</h3><p>Gas check, filter clean and cooling test.</p></div>
+      <div class="svc"><span class="ic">🔋</span><h3>Battery and electricals</h3><p>Battery test, starter, lights and wiring checks.</p></div>
+      <div class="svc"><span class="ic">🔧</span><h3>Puncture and tyres</h3><p>Puncture repair, tyre change and pressure check.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rates" class="alt">
+  <div class="wrap">
+    <h2>Rate card</h2>
+    <p class="note">Labour charges in ₹. Parts extra at actual cost.</p>
+    <div class="tablewrap"><table id="rateTable"></table></div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap grid two">
+    <div class="card">
+      <h2>Book a slot</h2>
+      <p class="note">We confirm your booking on WhatsApp within the hour.</p>
+      <form id="bookForm">
+        <label for="name">Your name</label>
+        <input id="name" required autocomplete="name">
+        <label for="plate">Vehicle number</label>
+        <input id="plate" required placeholder="KA 09 AB 1234">
+        <label for="bsvc">Service</label>
+        <select id="bsvc"></select>
+        <label for="date">Date</label>
+        <input id="date" type="date" required>
+        <label for="slot">Time slot</label>
+        <select id="slot">
+          <option>9 am to 11 am</option>
+          <option>11 am to 1 pm</option>
+          <option>2 pm to 4 pm</option>
+          <option>4 pm to 6 pm</option>
+        </select>
+        <div class="chk"><input type="checkbox" id="bpick"><label for="bpick">I need pickup &amp; drop</label></div>
+        <label for="notes">Anything we should know? (optional)</label>
+        <textarea id="notes" rows="3" placeholder="Strange noise from the engine, brake feels soft..."></textarea>
+        <button type="submit">Send booking on WhatsApp</button>
+      </form>
+    </div>
+
+    <div class="card" id="history">
+      <h2>Check your service history</h2>
+      <p class="note">Enter your vehicle number to see past jobs. Try KA09AB1234 or KA01XY5678.</p>
+      <label for="hplate">Vehicle number</label>
+      <input id="hplate" placeholder="KA09AB1234">
+      <button type="button" id="hbtn">Show history</button>
+      <p class="msg" id="hmsg" aria-live="polite"></p>
+      <ul class="hist" id="hlist"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="track" class="alt">
+  <div class="wrap grid two">
+    <div class="card">
+      <h2>Track your repair</h2>
+      <p class="note">Enter the job ID from your receipt. Try SG1001, SG1002 or SG1003.</p>
+      <div class="trackrow">
+        <div>
+          <label for="jobid">Job ID</label>
+          <input id="jobid" placeholder="SG1001" autocomplete="off">
+        </div>
+        <button type="button" id="trackBtn">Check status</button>
+      </div>
+      <p class="msg" id="tmsg" aria-live="polite"></p>
+      <div id="result">
+        <div class="jobinfo">
+          <strong id="rService"></strong>
+          <span id="rVehicle"></span>
+          <span class="note" id="rUpdated"></span>
+        </div>
+        <ol class="steps" id="steps"></ol>
+        <div class="statusnote" id="rNote"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>When is my next service?</h2>
+      <p class="note">Bikes and scooters every 3 months, cars every 6 months.</p>
+      <label for="rveh">Vehicle</label>
+      <select id="rveh"></select>
+      <label for="lastDate">Last service date</label>
+      <input id="lastDate" type="date">
+      <button type="button" id="remBtn">Find next service date</button>
+      <p class="msg" id="remOut" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>What customers say</h2>
+    <div class="card review">
+      <div class="stars" id="rvStars"></div>
+      <p class="quote" id="rvText"></p>
+      <p class="who" id="rvName"></p>
+      <div class="revbtns">
+        <button type="button" id="rvPrev" aria-label="Previous review">Previous</button>
+        <button type="button" id="rvNext" aria-label="Next review">Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <details><summary>How long does a service take?</summary><p>A basic service takes 2 to 3 hours. A full service is usually same day. We confirm the time when you book.</p></details>
+    <details><summary>Do you give a warranty?</summary><p>Yes. 30 days on labour and the manufacturer warranty on genuine parts.</p></details>
+    <details><summary>Will I be charged extra without asking?</summary><p>No. If we find extra work or parts, we call you with the price first and only start after you say yes.</p></details>
+    <details><summary>Do you offer pickup and drop?</summary><p>Yes, within 8 km for ₹150. Tick the pickup option while booking.</p></details>
+    <details><summary>How do I pay?</summary><p>Cash, UPI or card at the counter once your vehicle is ready.</p></details>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap grid two">
+    <div class="card">
+      <h2>Visit us</h2>
+      <p>12, Main Road, Your Town, Karnataka 5XXXXX</p>
+      <table class="hours">
+        <tr><td>Monday to Saturday</td><td>9 am to 7 pm</td></tr>
+        <tr><td>Sunday</td><td>By appointment</td></tr>
+      </table>
+      <p><strong>Phone / WhatsApp:</strong> +91 99999 99999</p>
+      <div class="sos">
+        <strong>Vehicle broken down?</strong>
+        <span>Call our roadside help and we will send a mechanic.</span>
+        <a class="btn" href="tel:+919999999999">Call roadside help</a>
+      </div>
+    </div>
+    <div class="mapbox">
+      <iframe title="Garage location on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Mysuru,Karnataka&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Sri Ganesh Auto Works</strong>
+    <span>Bike and car service, done right.</span>
+  </div>
+</footer>
+
+<a class="wa" id="waFloat" target="_blank" rel="noopener">Chat on WhatsApp</a>
+
+<script src="script.js"></script>
+</body>
+</html>
